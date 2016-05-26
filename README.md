@@ -117,4 +117,4 @@ app.post('/person', function(req, res){
 
 ## License
 
-[ISC License](LICENSE) &copy; 2016 [John Doherty](http://wwww.johndoherty.info/)
+[ISC License](LICENSE) &copy; 2016 [John Doherty](http://www.johndoherty.info/)

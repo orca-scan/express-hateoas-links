@@ -1,0 +1,27 @@
+{
+  "name": "express-hateoas-links",
+  "version": "1.0.0",
+  "description": "Overrides res.json allowing an array of HATEOAS links passed as the second parameter to be appended to the JSON object.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-doherty/express-hateoas-links.git"
+  },
+  "keywords": [
+    "hateoas",
+    "express",
+    "hateoas-links",
+    "json",
+    "jsonschema",
+    "json-schema"
+  ],
+  "author": "John Doherty <contact@johndoherty.info> (www.johndoherty.info)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/john-doherty/express-hateoas-links/issues"
+  },
+  "homepage": "https://github.com/john-doherty/express-hateoas-links#readme"
+}

@@ -13,8 +13,8 @@ $ npm install --save express-hateoas-links
 ```js
 // send person object with HATEOAS links added
 res.json(personObject, [
-    { rel: "self", method: "GET", href: 'http://127.0.0.1' )},
-    { rel: "create", method: "POST", title: 'Create Person', href: 'http://127.0.0.1/person' )}
+    { rel: "self", method: "GET", href: 'http://127.0.0.1' },
+    { rel: "create", method: "POST", title: 'Create Person', href: 'http://127.0.0.1/person' }
 ]);
 ```
 
@@ -34,7 +34,7 @@ app.use(hateoasLinker);
 app.get('/', function(req, res){
 
     // create an example JSON Schema
-    var personSchema = {{
+    var personSchema = {
         "name": "Person",
         "description": "This JSON Schema defines the paramaters required to create a Person object",
         "properties": {
@@ -60,9 +60,9 @@ app.get('/', function(req, res){
     };
 
     // call res.json as normal but pass second param as array of links
-    res.render(personSchema,[
-        { rel: "self", method: "GET", href: 'http://127.0.0.1' )},
-        { rel: "create", method: "POST", title: 'Create Person', href: 'http://127.0.0.1/person' )}
+    res.render(personSchema, [
+        { rel: "self", method: "GET", href: 'http://127.0.0.1' },
+        { rel: "create", method: "POST", title: 'Create Person', href: 'http://127.0.0.1/person' }
     ]);
 });
 

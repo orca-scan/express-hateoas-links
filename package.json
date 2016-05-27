@@ -4,7 +4,7 @@
   "description": "Overrides res.json allowing an array of HATEOAS links passed as the second parameter to be appended to the JSON object.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/jasmine-node/bin/jasmine-node test --verbose --color --forceexit --junitreport || true"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,11 @@
   "bugs": {
     "url": "https://github.com/john-doherty/express-hateoas-links/issues"
   },
-  "homepage": "https://github.com/john-doherty/express-hateoas-links#readme"
+  "homepage": "https://github.com/john-doherty/express-hateoas-links#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.13.4",
+    "jasmine-node": "^1.14.5",
+    "supertest": "^1.2.0"
+  }
 }

@@ -115,6 +115,15 @@ app.post('/person', function(req, res){
 }
 ```
 
+## Tests
+
+You can run the unit tests by changing directory into the express-hateoas-links director within your node_modules folder, and run the following commands:
+
+```bash
+npm install   // install modules dev dependencies
+npm test      // run unit tests
+```
+
 ## License
 
 [ISC License](LICENSE) &copy; 2016 [John Doherty](http://www.johndoherty.info/)

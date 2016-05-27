@@ -1,6 +1,6 @@
 {
   "name": "express-hateoas-links",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Overrides res.json allowing an array of HATEOAS links passed as the second parameter to be appended to the JSON object.",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
     "express",
     "hateoas-links",
     "json",
+    "response",
     "jsonschema",
     "json-schema"
   ],

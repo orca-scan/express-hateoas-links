@@ -60,7 +60,7 @@ app.get('/', function(req, res){
     };
 
     // call res.json as normal but pass second param as array of links
-    res.render(personSchema, [
+    res.json(personSchema, [
         { rel: "self", method: "GET", href: 'http://127.0.0.1' },
         { rel: "create", method: "POST", title: 'Create Person', href: 'http://127.0.0.1/person' }
     ]);

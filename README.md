@@ -1,6 +1,6 @@
 # express-hateoas-links
 
-Overrides res.json allowing an array of HATEOAS links passed as the second parameter to be appended to the JSON response.
+Extends express res.json to accept an array of HATEOAS links to be appended to the output JSON object.
 
 ## Installation
 

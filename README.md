@@ -127,4 +127,4 @@ npm test      // run unit tests
 
 ## License
 
-[ISC License](LICENSE) &copy; 2016 [John Doherty](https://courseof.life/johndoherty)
+[ISC License](LICENSE) &copy; 2016 [John Doherty](https://twitter.com/CambridgeMVP)

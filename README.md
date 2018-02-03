@@ -1,5 +1,5 @@
 # express-hateoas-links
-[![Shippable branch](https://img.shields.io/shippable/5818b23aa29a9a0f00ba1a28/master.svg)](https://app.shippable.com/projects/5818b23aa29a9a0f00ba1a28) [![npm](https://img.shields.io/npm/dt/express-hateoas-links.svg)](https://www.npmjs.com/package/express-hateoas-links) [![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/CambridgeMVP.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/CambridgeMVP)
+[![Shippable branch](https://img.shields.io/shippable/5818b23aa29a9a0f00ba1a28/master.svg)](https://app.shippable.com/projects/5818b23aa29a9a0f00ba1a28) [![npm](https://img.shields.io/npm/dt/express-hateoas-links.svg)](https://www.npmjs.com/package/express-hateoas-links) [![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/MrJohnDoherty.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/MrJohnDoherty)
 
 Extends express res.json to accept an array of HATEOAS links to be appended to the output JSON object.
 

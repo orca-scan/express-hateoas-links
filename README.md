@@ -9,7 +9,7 @@ Extends express res.json to accept an array of HATEOAS links to be appended to t
 $ npm install --save express-hateoas-links
 ```
 
-## Quick usage example
+## Usage
 
 ```js
 // send person object with HATEOAS links added
@@ -74,7 +74,7 @@ app.post('/person', function(req, res){
 
 ```
 
-## Output
+### Output
 
 ```json
 {
@@ -116,6 +116,14 @@ app.post('/person', function(req, res){
 }
 ```
 
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request
+
 ## Tests
 
 You can run the unit tests by changing directory into the express-hateoas-links director within your node_modules folder, and run the following commands:
@@ -125,6 +133,14 @@ npm install   // install modules dev dependencies
 npm test      // run unit tests
 ```
 
+## Star the repo
+
+If you find this useful, please star the repo. It helps me priorities which open source projects bugs I should tackle first.
+
+## History
+
+For change-log, check [releases](https://github.com/john-doherty/express-hateoas-links//releases).
+
 ## License
 
-[ISC License](LICENSE) &copy; 2016 [John Doherty](https://twitter.com/CambridgeMVP)
+Licensed under [MIT License](LICENSE) &copy; [John Doherty](http://www.johndoherty.info)

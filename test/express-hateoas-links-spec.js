@@ -141,4 +141,41 @@ describe('express-hateoas-links', function () {
             });
     });
 
+    it('should not append HATEOAS links property if disableHATEOAS=false', function(done){
+
+        var testJson = {
+            "name": "John Doherty",
+            "role": "Wantrepreneur",
+            "website": "www.johndoherty.info"
+        };
+
+        // create route to add links
+        app.get('/', function (req, res) {
+            res.disableHATEOAS = true;
+            res.json(testJson, [
+                { rel: "update", method: "POST", href: 'http://127.0.0.1' }
+            ]);
+        });
+
+        // execute request and test response
+        request(app).get('/')
+            .expect('Content-Type', 'application/json; charset=utf-8')
+            .expect(200)
+            .end(function(err, res){
+                
+                // check we have a response
+                expect(res.body).toBeDefined();
+                
+                // validate object integrity 
+                expect(res.body.name).toEqual(testJson.name);
+                expect(res.body.role).toEqual(testJson.role);
+                expect(res.body.website).toEqual(testJson.website);
+                
+                // check a links property was not added
+                expect(res.body.links).not.toBeDefined();
+                
+                // mark test as complete
+                done(err);
+            });
+    });
 });

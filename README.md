@@ -74,6 +74,8 @@ app.post('/person', function(req, res){
 
 ```
 
+You can set `req.disableHATEOAS = false` within a controller or pass `hateoas=false` via the querystring to disable HATEOAS links.
+
 ### Output
 
 ```json
@@ -135,11 +137,11 @@ npm test      // run unit tests
 
 ## Star the repo
 
-If you find this useful, please star the repo. It helps me priorities which open source projects bugs I should tackle first.
+Please star the repo if you find this useful as it helps me priorities which open source issues to tackle first.
 
 ## History
 
-For change-log, check [releases](https://github.com/john-doherty/express-hateoas-links//releases).
+For change-log, check [releases](https://github.com/john-doherty/express-hateoas-links/releases).
 
 ## License
 

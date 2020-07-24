@@ -1,6 +1,6 @@
 {
   "name": "express-hateoas-links",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Extends express res.json to accept an array of HATEOAS links to be appended to the output JSON object",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/john-doherty/express-hateoas-links.git"
+    "url": "git+https://github.com/orca-scan/express-hateoas-links.git"
   },
   "keywords": [
     "hateoas",
@@ -16,12 +16,12 @@
     "HATEOAS",
     "json"
   ],
-  "author": "John Doherty <contact@johndoherty.info> (www.johndoherty.info)",
+  "author": "John Doherty <john@orcascan.com> (www.orcascan.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/john-doherty/express-hateoas-links/issues"
+    "url": "https://github.com/orca-scan/express-hateoas-links/issues"
   },
-  "homepage": "https://github.com/john-doherty/express-hateoas-links#readme",
+  "homepage": "https://github.com/orca-scan/express-hateoas-links#readme",
   "dependencies": {},
   "devDependencies": {
     "express": "^4.13.4",

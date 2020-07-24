@@ -1,12 +1,13 @@
 # express-hateoas-links
-[![Shippable branch](https://img.shields.io/shippable/5818b23aa29a9a0f00ba1a28/master.svg)](https://app.shippable.com/projects/5818b23aa29a9a0f00ba1a28) [![npm](https://img.shields.io/npm/dt/express-hateoas-links.svg)](https://www.npmjs.com/package/express-hateoas-links) [![Linked In](https://img.shields.io/badge/Linked-In-blue.svg)](https://www.linkedin.com/in/john-i-doherty) [![Twitter Follow](https://img.shields.io/twitter/follow/MrJohnDoherty.svg?style=social&label=Twitter&style=plastic)](https://twitter.com/MrJohnDoherty)
+
+[![Shippable branch](https://img.shields.io/shippable/5818b23aa29a9a0f00ba1a28/master.svg)](https://app.shippable.com/projects/5818b23aa29a9a0f00ba1a28) [![npm](https://img.shields.io/npm/dt/express-hateoas-links.svg)](https://www.npmjs.com/package/express-hateoas-links)
 
 Extends express res.json to accept an array of HATEOAS links to be appended to the output JSON object.
 
 ## Installation
 
 ```bash
-$ npm install --save express-hateoas-links
+npm install --save express-hateoas-links
 ```
 
 ## Usage
@@ -24,9 +25,9 @@ res.json(personObject, [
 The example below adds a self & create link to a JSON schema used to create a person. This allows the consuming application to understand what properties are required to create a Person and the destination URL to post to, removing the need for the application to hard code API links. 
 
 ```js
-var express = require('express'),
-    app = express(),
-    hateoasLinker = require('express-hateoas-links');
+var express = require('express');
+var app = express();
+var hateoasLinker = require('express-hateoas-links');
 
 // replace standard express res.json with the new version
 app.use(hateoasLinker);
@@ -71,17 +72,16 @@ app.get('/', function(req, res){
 app.post('/person', function(req, res){
     // do some stuff with the person data
 });
-
 ```
 
-You can set `req.disableHATEOAS = false` within a controller or pass `hateoas=false` via the querystring to disable HATEOAS links.
+You can set `req.disableHATEOAS = false` within a controller or pass `hateoas=false` via the QueryString to disable HATEOAS links.
 
 ### Output
 
 ```json
 {
     "name": "Person",
-    "description": "This JSON Schema defines the paramaters required to create a Person object",
+    "description": "This JSON Schema defines the parameters required to create a Person object",
     "properties": {
         "name": {
             "title": "Name",
@@ -103,15 +103,15 @@ You can set `req.disableHATEOAS = false` within a controller or pass `hateoas=fa
         }
     },
     "links":[
-        { 
-            "rel": "self", 
-            "method": "GET", 
+        {
+            "rel": "self",
+            "method": "GET",
             "href": "http://127.0.0.1"
         },
-        { 
-            "rel": "create", 
-            "method": "POST", 
-            "title": "Create Person", 
+        {
+            "rel": "create",
+            "method": "POST",
+            "title": "Create Person",
             "href": "http://127.0.0.1/person"
         }
     ]
@@ -141,8 +141,8 @@ Please star the repo if you find this useful as it helps me priorities which ope
 
 ## History
 
-For change-log, check [releases](https://github.com/john-doherty/express-hateoas-links/releases).
+For change-log, check [releases](https://github.com/orca-scan/express-hateoas-links/releases).
 
 ## License
 
-Licensed under [MIT License](LICENSE) &copy; [John Doherty](http://www.johndoherty.info)
+Licensed under [MIT License](LICENSE) &copy; [Orca Scan](https://orcascan.com)

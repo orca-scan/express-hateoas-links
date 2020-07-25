@@ -137,7 +137,7 @@ npm test      // run unit tests
 
 ## Star the repo
 
-Please star the repo if you find this useful as it helps me priorities which open source issues to tackle first.
+Please star the repo if you find this useful as it helps us priorities which open source issues to tackle first.
 
 ## History
 

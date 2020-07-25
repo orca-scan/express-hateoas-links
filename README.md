@@ -1,8 +1,8 @@
 # express-hateoas-links
 
-[![Shippable branch](https://img.shields.io/shippable/5818b23aa29a9a0f00ba1a28/master.svg)](https://app.shippable.com/projects/5818b23aa29a9a0f00ba1a28) [![npm](https://img.shields.io/npm/dt/express-hateoas-links.svg)](https://www.npmjs.com/package/express-hateoas-links)
+[![Build Status](https://travis-ci.org/orca-scan/express-hateoas-links.svg?branch=master)](https://travis-ci.org/orca-scan/express-hateoas-links) [![npm](https://img.shields.io/npm/dt/express-hateoas-links.svg)](https://www.npmjs.com/package/express-hateoas-links)
 
-Extends express res.json to accept an array of HATEOAS links to be appended to the output JSON object.
+Extends express `res.json` to accept an array of HATEOAS links to be appended to the output JSON object.
 
 ## Installation
 
@@ -38,7 +38,7 @@ app.get('/', function(req, res){
     // create an example JSON Schema
     var personSchema = {
         "name": "Person",
-        "description": "This JSON Schema defines the paramaters required to create a Person object",
+        "description": "This JSON Schema defines the parameters required to create a Person object",
         "properties": {
             "name": {
                 "title": "Name",

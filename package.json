@@ -1,6 +1,6 @@
 {
   "name": "express-hateoas-links",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Extends express res.json to accept an array of HATEOAS links to be appended to the output JSON object",
   "main": "index.js",
   "scripts": {

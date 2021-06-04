@@ -145,4 +145,4 @@ For change-log, check [releases](https://github.com/orca-scan/express-hateoas-li
 
 ## License
 
-Licensed under [MIT License](LICENSE) &copy; [Orca Scan](https://orcascan.com)
+Licensed under [MIT License](LICENSE) &copy; Orca Scan, the [Barcode Scanner app for iOS and Android](https://orcascan.com).

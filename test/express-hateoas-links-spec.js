@@ -1,7 +1,7 @@
-var express = require('express'),
-    request = require('supertest'),
-    hateoasLinker = require('../lib/express-hateoas-links.js'),
-    app = null;
+var express = require('express');
+var request = require('supertest');
+var hateoasLinker = require('../lib/express-hateoas-links.js');
+var app = null;
 
 describe('express-hateoas-links', function () {
 
@@ -17,9 +17,9 @@ describe('express-hateoas-links', function () {
     it('should append HATEOAS links to json response', function(done){
 
         var testJson = {
-            "name": "John Doherty",
-            "role": "Wantrepreneur",
-            "website": "www.johndoherty.info"
+            "name": "Orca Scan",
+            "description": "Barcode scanner app",
+            "website": "https://orcascan.com"
         };
 
         // create route to add links
@@ -57,9 +57,9 @@ describe('express-hateoas-links', function () {
     it('should append HATEOAS links to existing .links collection', function(done){
 
         var testJson = {
-            "name": "John Doherty",
-            "role": "Wantrepreneur",
-            "website": "www.johndoherty.info",
+            "name": "Orca Scan",
+            "description": "Barcode scanner app",
+            "website": "https://orcascan.com",
             "links": [
                 { rel: "update", method: "POST", href: 'http://127.0.0.1' }
             ]
@@ -108,9 +108,9 @@ describe('express-hateoas-links', function () {
     it('should not append HATEOAS links property', function(done){
 
         var testJson = {
-            "name": "John Doherty",
-            "role": "Wantrepreneur",
-            "website": "www.johndoherty.info"
+            "name": "Orca Scan",
+            "description": "Barcode scanner app",
+            "website": "https://orcascan.com"
         };
 
         // create route to add links
@@ -141,12 +141,12 @@ describe('express-hateoas-links', function () {
             });
     });
 
-    it('should not append HATEOAS links property if disableHATEOAS=false', function(done){
+    it('should not append HATEOAS links if res.disableHATEOAS=false', function(done){
 
         var testJson = {
-            "name": "John Doherty",
-            "role": "Wantrepreneur",
-            "website": "www.johndoherty.info"
+            "name": "Orca Scan",
+            "description": "Barcode scanner app",
+            "website": "https://orcascan.com"
         };
 
         // create route to add links
@@ -159,6 +159,44 @@ describe('express-hateoas-links', function () {
 
         // execute request and test response
         request(app).get('/')
+            .expect('Content-Type', 'application/json; charset=utf-8')
+            .expect(200)
+            .end(function(err, res){
+                
+                // check we have a response
+                expect(res.body).toBeDefined();
+                
+                // validate object integrity 
+                expect(res.body.name).toEqual(testJson.name);
+                expect(res.body.role).toEqual(testJson.role);
+                expect(res.body.website).toEqual(testJson.website);
+                
+                // check a links property was not added
+                expect(res.body.links).not.toBeDefined();
+                
+                // mark test as complete
+                done(err);
+            });
+    });
+
+
+    it('should not append HATEOAS links if ?hateoas=false', function(done){
+
+        var testJson = {
+            "name": "Orca Scan",
+            "description": "Barcode scanner app",
+            "website": "https://orcascan.com"
+        };
+
+        // create route to add links
+        app.get('/', function (req, res) {
+            res.json(testJson, [
+                { rel: "update", method: "POST", href: 'http://127.0.0.1' }
+            ]);
+        });
+
+        // execute request and test response
+        request(app).get('/?hateoas=false')
             .expect('Content-Type', 'application/json; charset=utf-8')
             .expect(200)
             .end(function(err, res){

@@ -20,6 +20,15 @@ res.json(personObject, [
 ]);
 ```
 
+Optionally exclude/remove links based on rel value:
+
+```js
+res.json(personObject, [
+    { rel: "self", method: "GET", href: 'http://127.0.0.1' },
+    { rel: "create", method: "POST", title: 'Create Person', href: 'http://127.0.0.1/person' }
+], [ 'create' ]); // <- removes `create` link
+```
+
 ## Typical use case
 
 The example below adds a self & create link to a JSON schema used to create a person. This allows the consuming application to understand what properties are required to create a Person and the destination URL to post to, removing the need for the application to hard code API links. 

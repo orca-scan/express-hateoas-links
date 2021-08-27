@@ -216,4 +216,56 @@ describe('express-hateoas-links', function () {
                 done(err);
             });
     });
+
+    
+    it('should exclude HATEOAS links', function(done){
+
+        var testJson = {
+            "name": "Orca Scan",
+            "description": "Barcode scanner app",
+            "website": "https://orcascan.com",
+            "links": [
+                { rel: "create", method: "POST", href: 'http://127.0.0.1' },
+                { rel: "update", method: "PUT", href: 'http://127.0.0.1' }
+            ]
+        };
+
+        // create route to add links
+        app.get('/', function (req, res) {
+
+            res.json(testJson, [
+                { rel: "self", method: "GET", href: 'http://127.0.0.1' }
+            ],
+            [
+                'create'
+            ]);
+        });
+
+        // execute request and test response
+        request(app).get('/')
+            .expect('Content-Type', 'application/json; charset=utf-8')
+            .expect(200)
+            .end(function(err, res){
+                
+                // check we have a response
+                expect(res.body).toBeDefined();
+                
+                // validate object integrity 
+                expect(res.body.name).toEqual(testJson.name);
+                expect(res.body.role).toEqual(testJson.role);
+                expect(res.body.website).toEqual(testJson.website);
+                
+                expect(res.body.links).toBeDefined();
+                expect(res.body.links.length).toEqual(2);
+                expect(res.body.links[0].rel).toEqual('update');
+                expect(res.body.links[0].method).toEqual('PUT');
+                expect(res.body.links[0].href).toEqual('http://127.0.0.1');
+                expect(res.body.links[1].rel).toEqual('self');
+                expect(res.body.links[1].method).toEqual('GET');
+                expect(res.body.links[1].href).toEqual('http://127.0.0.1');
+                
+                // mark test as complete
+                done(err);
+            });
+    });
 });

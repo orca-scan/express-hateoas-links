@@ -74,7 +74,7 @@ app.post('/person', function(req, res){
 });
 ```
 
-You can set `req.disableHATEOAS = false` within a controller or pass `hateoas=false` via the QueryString to disable HATEOAS links.
+You can set `req.disableHATEOAS = false` within a controller or pass `?hateoas=false` to disable HATEOAS links.
 
 ### Output
 
@@ -145,4 +145,4 @@ For change-log, check [releases](https://github.com/orca-scan/express-hateoas-li
 
 ## License
 
-Licensed under [MIT License](LICENSE) &copy; Orca Scan, the [Barcode Scanner app for iOS and Android](https://orcascan.com).
+Licensed under [MIT License](LICENSE) &copy; Orca Scan, the [Barcode Scanner app](https://orcascan.com).

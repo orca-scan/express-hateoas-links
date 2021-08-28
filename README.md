@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/orca-scan/express-hateoas-links.svg?branch=master)](https://travis-ci.org/orca-scan/express-hateoas-links) [![npm](https://img.shields.io/npm/dt/express-hateoas-links.svg)](https://www.npmjs.com/package/express-hateoas-links)
 
-Extends express `res.json` to accept an array of HATEOAS links to be appended to the output JSON object.
+Extends express `res.json` to simplify building HATEOAS enabled REST API's by appending links to JSON responses.
 
 ## Installation
 

@@ -179,8 +179,41 @@ describe('express-hateoas-links', function () {
             });
     });
 
+    it('should handle undefined json payload without links', function(done){
 
-    it('should not append HATEOAS links if ?hateoas=false', function(done){
+        // create route that returns undefined payload
+        app.get('/', function (req, res) {
+            res.json(undefined);
+        });
+
+        // execute request and verify middleware does not throw
+        request(app).get('/')
+            .end(function(err, res){
+
+                expect(res.statusCode).not.toEqual(500);
+                done(err);
+            });
+    });
+
+    it('should return express response object from res.json', function(done) {
+
+        app.get('/', function (req, res) {
+
+            var returned = res.json({ name: "Orca Scan"}, [
+                { rel: "self", method: "GET", href: 'http://127.0.0.1' }
+            ]);
+
+            expect(returned).toEqual(res);
+            expect(typeof returned.end).toEqual('function');
+        });
+
+        request(app).get('/')
+            .expect('Content-Type', 'application/json; charset=utf-8')
+            .expect(200)
+            .end(done);
+    });
+
+    it('should not append HATEOAS links if ?hateoas=false', function(done) {
 
         var testJson = {
             "name": "Orca Scan",
@@ -216,9 +249,8 @@ describe('express-hateoas-links', function () {
                 done(err);
             });
     });
-
     
-    it('should exclude HATEOAS links', function(done){
+    it('should exclude HATEOAS links', function(done) {
 
         var testJson = {
             "name": "Orca Scan",

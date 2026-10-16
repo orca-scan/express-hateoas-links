@@ -1,10 +1,10 @@
 {
   "name": "express-hateoas-links",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Extends express res.json to simplify building HATEOAS enabled REST API's",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/jasmine-node/bin/jasmine-node test --verbose --color --forceexit --junitreport || true"
+    "test": "./node_modules/jasmine-node/bin/jasmine-node test --verbose --color --forceexit --junitreport"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,9 @@
     "url": "https://github.com/orca-scan/express-hateoas-links/issues"
   },
   "homepage": "https://github.com/orca-scan/express-hateoas-links#readme",
+  "engines": {
+    "node": ">=8.3"
+  },
   "dependencies": {},
   "devDependencies": {
     "express": "^4.13.4",
